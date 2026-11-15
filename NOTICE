@@ -1,0 +1,18 @@
+agpl-office-apps — notices
+
+This repository publishes the corresponding source of AGPL-licensed apps offered
+by Amplify (amplify.is). Upstream projects, their copyright holders and licences:
+
+1. HeyPuter/everything — https://github.com/HeyPuter/everything
+   Copyright (c) 2026 Puter Technologies Inc.
+   - src/spreadsheet: GNU Affero General Public License v3.0 only (AGPL-3.0-only)
+   Snapshot reviewed: commit 71e76b32b90f6222260f1ee643d274103a03e0aa (2026-11-14)
+   Bundled third-party code kept under its own licence, including:
+   - SheetJS Community Edition 0.20.3 — Apache License 2.0
+   - Lucide icons — ISC License
+   (Full per-app third-party notices are kept in each app directory.)
+
+Amplify modifications are Copyright (c) 2026 Guðmundur Eyberg Kristjánsson
+(Amplify) and are licensed under the same terms as the app they modify.
+
+"Puter" is a trademark of Puter Technologies Inc. No endorsement is implied.
