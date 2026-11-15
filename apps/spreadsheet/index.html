@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content" />
   <title>Spreadsheet</title>
   <meta name="description" content="A fast, private AI spreadsheet. Formulas, formatting, and real .xlsx files saved to your own Puter cloud." />
-  <link rel="canonical" href="https://spreadsheet.puter.com/" />
+  <!-- Amplify modification: canonical to spreadsheet.puter.com removed -->
   <!-- Link previews. Crawlers need an absolute image URL. Alternate designs live beside it in public/og/
        (sources in dev/og/). -->
   <meta property="og:type" content="website" />
@@ -60,14 +60,9 @@
       } catch {}
     })();
   </script>
-  <!-- Privacy-friendly analytics by Plausible -->
-  <script async src="https://plausible.io/js/pa-MRQHafK7nSUP6VOpIrhR4.js"></script>
-  <script>
-    window.plausible = window.plausible || function () { (plausible.q = plausible.q || []).push(arguments); };
-    plausible.init = plausible.init || function (i) { plausible.o = i || {}; };
-    plausible.init();
-  </script>
-  <script src="https://js.puter.com/v2/" defer></script>
+  <!-- Amplify modification: Puter's Plausible analytics and the Puter SDK are removed; the Amplify storage adapter
+       (src/amplify/puter-adapter.js) is imported by main.js. -->
+  <meta name="robots" content="noindex, nofollow" />
   <script type="module" src="/src/main.js"></script>
 </head>
 <body>

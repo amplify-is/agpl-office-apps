@@ -22,8 +22,11 @@ Each app lives in its own directory (`apps/<name>/`) with its own `LICENSE`
 Amplify changed and when. AGPL apps run as separate, isolated services; they are
 not compiled into Amplify's own (non-AGPL) code.
 
-Status: **no app published yet.** The first planned app is the spreadsheet from
-[HeyPuter/everything](https://github.com/HeyPuter/everything) (`src/spreadsheet`).
+## Apps
+
+| App | Directory | Upstream | Status |
+| --- | --- | --- | --- |
+| Spreadsheet | [`apps/spreadsheet`](apps/spreadsheet) | [HeyPuter/everything](https://github.com/HeyPuter/everything) `src/spreadsheet` | Staging test (`stg-agpl-spreadsheet`); changes in [`MODIFICATIONS.md`](apps/spreadsheet/MODIFICATIONS.md) |
 
 Licence: [GNU AGPL-3.0](LICENSE). Third-party and upstream notices: [NOTICE](NOTICE).
 Contact: hello@amplify.is

@@ -1,0 +1,20 @@
+{
+  "name": "stg-agpl-spreadsheet-service",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "AGPL-3.0-only",
+  "description": "Amplify staging service for the AGPL Spreadsheet app: storage Worker, guard, tests",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "guard": "node scripts/check-prod-config.mjs",
+    "deploy:staging": "sh scripts/deploy-staging.sh"
+  },
+  "devDependencies": {
+    "wrangler": "4.162.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "workerd@1.20261113.1": true
+  }
+}

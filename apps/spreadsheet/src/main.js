@@ -1,3 +1,4 @@
+import './amplify/puter-adapter.js'; // Amplify: Puter SDK replaced by the Amplify storage adapter (AGPL-3.0-only modification)
 import './styles/index.css';
 import { el } from './ui/dom.js';
 import { icon } from './ui/icons.js';

@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite';
-import puterLocalhost from '../../dev/puter-localhost.mjs';
+// Amplify modification: the Puter monorepo dev-host plugin (../../dev/puter-localhost.mjs) is not part of this tree.
 
 export default defineConfig({
-  plugins: [puterLocalhost('spreadsheet')],
+  plugins: [],
   base: './',
   build: {
     target: 'es2022',

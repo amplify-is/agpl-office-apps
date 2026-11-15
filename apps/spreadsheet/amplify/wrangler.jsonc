@@ -1,0 +1,32 @@
+// stg-agpl-spreadsheet: the AGPL-3.0-only Spreadsheet app (modified by Amplify) as its own isolated STAGING service.
+// Gudmundur 15 Nov 2026 22:38 (2a, 3b) + 22:52 (1a): staging only, source published here before every deploy.
+// Top level = local dev, flag OFF. env.staging = the deployed Worker. No production env; amplify/scripts/check-prod-config.mjs
+// (the build) refuses one, routes, non-stg names, Amplify core storage, and a deploy whose SOURCE_TAG is missing.
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "stg-agpl-spreadsheet-local",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-11-15",
+  "workers_dev": false,
+  "preview_urls": false,
+  "build": { "command": "node scripts/check-prod-config.mjs && npm --prefix .. run build" },
+  "assets": { "directory": "../dist", "binding": "ASSETS", "run_worker_first": true },
+  "observability": { "enabled": true, "traces": { "enabled": true } },
+  "version_metadata": { "binding": "CF_VERSION_METADATA" },
+  "vars": { "SPREADSHEET_ENABLED": "0", "AUTH_MODE": "access", "ACCESS_TEAM_DOMAIN": "amplify-staging.cloudflareaccess.com", "ACCESS_AUD": "", "ALLOWED_EMAILS": "hello@amplify.is", "SOURCE_TAG": "" },
+  "d1_databases": [{ "binding": "DB", "database_name": "stg-agpl-spreadsheet", "database_id": "880c2e08-b784-4a0c-8086-c242ca76c36c", "migrations_dir": "migrations" }],
+  "r2_buckets": [{ "binding": "FILES", "bucket_name": "stg-agpl-spreadsheet" }],
+  "env": {
+    "staging": {
+      "name": "stg-agpl-spreadsheet",
+      "workers_dev": true,
+      "preview_urls": false,
+      // Access: app 125a029a (staging-allow-owner) on the host; app cabdf907 bypasses /source and /license (AGPL offer to all users)
+      // SOURCE_TAG is set at deploy time by amplify/scripts/deploy-staging.sh to the pushed tag spreadsheet-stg-<shortsha>.
+      "vars": { "SPREADSHEET_ENABLED": "1", "AUTH_MODE": "access", "ACCESS_TEAM_DOMAIN": "amplify-staging.cloudflareaccess.com", "ACCESS_AUD": "919c5a9dff6b29380a5ffc11b9df77357f076a498ced5a83a4bf733c23351e71", "ALLOWED_EMAILS": "hello@amplify.is" },
+      "version_metadata": { "binding": "CF_VERSION_METADATA" },
+      "d1_databases": [{ "binding": "DB", "database_name": "stg-agpl-spreadsheet", "database_id": "880c2e08-b784-4a0c-8086-c242ca76c36c", "migrations_dir": "migrations" }],
+      "r2_buckets": [{ "binding": "FILES", "bucket_name": "stg-agpl-spreadsheet" }]
+    }
+  }
+}
